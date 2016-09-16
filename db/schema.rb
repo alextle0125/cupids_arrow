@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916225936) do
+ActiveRecord::Schema.define(version: 20160916232055) do
 
   create_table "cupids_arrows", force: :cascade do |t|
     t.string  "longitude"
@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(version: 20160916225936) do
   add_index "delivery_tags", ["user_id"], name: "index_delivery_tags_on_user_id"
 
   create_table "items", force: :cascade do |t|
-    t.string "name"
-    t.float  "price"
+    t.string  "name"
+    t.float   "price"
+    t.integer "likes_count"
   end
 
   create_table "locations", force: :cascade do |t|
