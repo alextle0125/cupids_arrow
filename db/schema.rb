@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916232055) do
+ActiveRecord::Schema.define(version: 20160916234338) do
 
   create_table "cupids_arrows", force: :cascade do |t|
     t.string  "longitude"
@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(version: 20160916232055) do
     t.string  "name"
     t.float   "price"
     t.integer "likes_count"
+    t.integer "location_id"
   end
+
+  add_index "items", ["location_id"], name: "index_items_on_location_id"
 
   create_table "locations", force: :cascade do |t|
     t.string  "curr_status"
